@@ -47,7 +47,8 @@ body::-webkit-scrollbar-thumb {
 
 #mynav {
   background-color: var(--primary-color);
-  background-clip: border-box;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
 .nav-link {
