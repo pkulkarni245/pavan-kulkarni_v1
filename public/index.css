@@ -42,7 +42,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #mynav {
-  padding: 0px;
+  background-origin: padding-box;
 }
 
 .nav-link {
