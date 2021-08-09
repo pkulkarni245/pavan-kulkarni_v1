@@ -161,12 +161,12 @@ svg:hover {
 
     @font-face {
       font-family: "Flaticon";
-      src: url("../fonts/Flaticon.eot");
-      src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
-           url("../fonts/Flaticon.woff2") format("woff2"),
-           url("../fonts/Flaticon.woff") format("woff"),
-           url("../fonts/Flaticon.ttf") format("truetype"),
-           url("../fonts/Flaticon.svg#Flaticon") format("svg");
+      src: url("fonts/Flaticon.eot");
+      src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+           url("fonts/Flaticon.woff2") format("woff2"),
+           url("fonts/Flaticon.woff") format("woff"),
+           url("fonts/Flaticon.ttf") format("truetype"),
+           url("fonts/Flaticon.svg#Flaticon") format("svg");
       font-weight: normal;
       font-style: normal;
     }
@@ -174,7 +174,7 @@ svg:hover {
     @media screen and (-webkit-min-device-pixel-ratio:0) {
       @font-face {
         font-family: "Flaticon";
-        src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+        src: url("fonts/Flaticon.svg#Flaticon") format("svg");
       }
     }
     
@@ -305,14 +305,14 @@ svg:hover {
       padding-top: 10em;
       padding-bottom: 5em;
       border-radius: 10px;
-      background-image: url(../assets/img.jpg);
+      background-image: url(assets/img.jpg);
       background-size: cover;
       margin-bottom: 10em;
     }
 
   @media only screen and (max-width: 600px) {
     .top-jumbotron {
-      background-image: url(../assets/img_small.jpg);
+      background-image: url(assets/img_small.jpg);
     }
   }
 
@@ -344,7 +344,7 @@ svg:hover {
   }
 
     footer {
-      background-image: url(../assets/favicon_io/favicon-16x16.png);
+      background-image: url(assets/favicon_io/favicon-16x16.png);
       height:16px;
     }
 
