@@ -41,6 +41,10 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--tertiary-color);
 }
 
+#mynav {
+  padding: 0px;
+}
+
 .nav-link {
   z-index: 1;
 }
