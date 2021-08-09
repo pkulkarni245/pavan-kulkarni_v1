@@ -10,6 +10,7 @@
 :root {
   --primary-color: #000000;
   --secondary-color: #323232;
+  --secondary-color-translucent: #32323250;
   --tertiary-color: #ffac41;
   --quaternary-color: #ff1e56;
   --quaternary-color-translucent: #ff1e568f;
@@ -53,12 +54,17 @@ body::-webkit-scrollbar-thumb {
 
 .nav-link {
   z-index: 1;
+  border-radius: 0.25rem;
+}
+
+.nav-link:hover {
+  background-color: var(--secondary-color-translucent);
 }
 
 .nav-item {
   z-index: 1;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .double-down {
@@ -69,7 +75,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .double-down:hover {
-  color: #fff;
+  color: var(--quaternary-color);
 }
 
 @media only screen and (max-width: 600px) {
@@ -108,10 +114,11 @@ body::-webkit-scrollbar-thumb {
 
 #navbar-link {
   color: var(--tertiary-color);
+  font-size: 20px;
 }
 
 #navbar-link:hover {
-  color: #fff;
+  color: var(--quaternary-color);
 }
 
 .card-header, .card-body, .card-title {
@@ -129,7 +136,7 @@ svg {
   fill:var(--tertiary-color);
 }
 svg:hover {
-  fill:#fff;
+  fill:var(--quaternary-color);
 }
 
 .container-fluid {
