@@ -71,7 +71,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--tertiary-color);
   position: absolute;
   left: calc( 50% - 12px);
-  bottom: 2em;
+  bottom: 1em;
 }
 
 .double-down:hover {
@@ -115,6 +115,7 @@ body::-webkit-scrollbar-thumb {
 #navbar-link {
   color: var(--tertiary-color);
   font-size: 20px;
+  font-weight: bold;
 }
 
 #navbar-link:hover {
@@ -315,6 +316,7 @@ svg:hover {
     }
 
     .jumbotron {
+      text-align: center;
       display:block;
       width: 100%;
       margin: 0px auto;
@@ -322,7 +324,7 @@ svg:hover {
     }
 
     .top-jumbotron {
-      height: 30em;
+      height: 40em;
       padding-top: 10em;
       padding-bottom: 5em;
       background-image: url(assets/img.jpg);
@@ -333,12 +335,13 @@ svg:hover {
   @media only screen and (max-width: 600px) {
     .top-jumbotron {
       background-image: url(assets/img_small.jpg);
+      height: 60em;
     }
   }
 
     .jumbotron-caption {
       position: absolute;
-      bottom: 18%;
+      bottom: 0%;
       right: 2px;
       font-size: 10px;
       color: var(--tertiary-color-translucent);
@@ -394,7 +397,7 @@ svg:hover {
       vertical-align: bottom;
       text-align: center;
       margin-top: 6%;
-      background-color: var(--shade-black);
+      border: 1px solid var(--tertiary-color);
     }
 
     figure {
@@ -421,16 +424,17 @@ svg:hover {
       white-space: nowrap;
       min-width: fit-content;
       border-radius: 0.25rem;
-      border-bottom-left-radius: 0rem;
-      border-bottom-right-radius: 0rem;
     }    
 
     .jumbotron-description {
-      padding-top: 2px;
+      font-weight: bold;
+      width: 100%;
+      padding: 2px;
       text-align: center;
-      position: relative;
-      top: 23%;
-      
+      position: absolute;
+      bottom: 39.5%;
+      left: 0%;
+      font-size: 16px;
       background-color: var(--shade-black);
     }
 
