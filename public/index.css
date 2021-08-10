@@ -54,7 +54,6 @@ body::-webkit-scrollbar-thumb {
 
 .nav-link {
   z-index: 1;
-  border-radius: 0.25rem;
 }
 
 .nav-link:hover {
@@ -65,6 +64,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 1;
   padding-top: 6px;
   padding-bottom: 6px;
+  margin-right: 0px;
 }
 
 .double-down {
@@ -88,6 +88,11 @@ body::-webkit-scrollbar-thumb {
   padding-left: 1em;
   background-color: var(--translucent-black);
  }
+}
+
+.logo {
+  color: var(--tertiary-color);
+  font-size: 36px;
 }
 
 .navbar-brand {
@@ -114,7 +119,7 @@ body::-webkit-scrollbar-thumb {
 
 #navbar-link {
   color: var(--tertiary-color);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -257,64 +262,6 @@ svg:hover {
       color: var(--tertiary-color);
     }
 
-
-
-    [data-tooltip] {
-      display: inline-block;/*bug fix*/
-      position: relative;
-      text-decoration: none;
-    }
-    [data-tooltip]:after {
-      content: attr(data-tooltip);
-      position: absolute;
-      top: 130%;
-      right: 20%;
-      background: var(--tertiary-color);
-      padding: 5px 15px;
-      color: #000;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      -ms-border-radius: 10px;
-      -o-border-radius: 10px;
-      border-radius: 10px;
-      white-space: nowrap;
-      opacity: 0;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      font-size: 12px;
-      font-weight: bold;
-    }
-    [data-tooltip]:before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-bottom: 10px solid var(--tertiary-color);
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      opacity: 0;
-      right: 30%;
-      top: 120%;
-    }
-    [data-tooltip]:hover:after {
-      bottom: 100%;
-    }
-    [data-tooltip]:hover:before {
-      bottom: 70%;
-    }
-    [data-tooltip]:hover:after,
-    [data-tooltip]:hover:before {
-      opacity: 1;
-    }
-
     .jumbotron {
       text-align: center;
       display:block;
@@ -393,6 +340,12 @@ svg:hover {
       vertical-align: top;
     }
 
+    .name-tag {
+      font-size: 32px;
+      font-weight: normal;
+      border-bottom: 1px dotted var(--tertiary-color)
+    }
+
     figure figcaption {
       vertical-align: bottom;
       text-align: center;
@@ -423,7 +376,6 @@ svg:hover {
       font-size: 2em;
       white-space: nowrap;
       min-width: fit-content;
-      border-radius: 0.25rem;
     }    
 
     .jumbotron-description {
