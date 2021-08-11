@@ -242,6 +242,7 @@ svg:hover {
     .card {
       border: 1px var(--tertiary-color) solid;
       background-color: var(--primary-color);
+      border-radius: 0px;
     }
 
     .bg-primary {
@@ -272,11 +273,11 @@ svg:hover {
 
     .top-jumbotron {
       height: 40em;
-      padding-top: 10em;
+      padding-top: 1em;
       padding-bottom: 5em;
       background-image: url(assets/img.jpg);
       background-size: cover;
-      margin-bottom: 10em;
+      margin-bottom: 1em;
     }
 
   @media only screen and (max-width: 600px) {
@@ -287,10 +288,11 @@ svg:hover {
   }
 
     .jumbotron-caption {
-      position: absolute;
+      position: relative;
       bottom: 0%;
       right: 2px;
       font-size: 10px;
+      text-align: right;
       color: var(--tertiary-color-translucent);
     }
 
@@ -305,8 +307,8 @@ svg:hover {
       display: none;
     }
     .jumbotron-caption-small {
-      position: absolute;
-      bottom: 22%;
+      position: relative;
+      margin-top: 50%;
       right: 2px;
       font-size: 10px;
       color: var(--tertiary-color-translucent);
@@ -357,17 +359,24 @@ svg:hover {
       position: absolute;
       max-width: 200px;
       max-height: 200px;
-      bottom: calc(65%);
+      bottom: 60%;
       left: calc(50% - 100px);
+    }
+
+    .dp-holder {
+      background-color: var(--tertiary-color);
+      max-width: 210px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 100%;
+      position: relative;
+      left: calc( 50% - 105px);
     }
 
     .display-picture, .jumbotron-display-picture {
       max-width: 200px;
       height: auto;
-      border-bottom-left-radius: 100%;
-      border-bottom-right-radius: 100%;
-      border-top-left-radius: 100%;
-      border-top-right-radius: 100%;
+      border-radius: 100%;
     }
     
     .jumbotron-display-picture-caption {
@@ -383,7 +392,7 @@ svg:hover {
       width: 100%;
       padding: 2px;
       text-align: center;
-      position: absolute;
+      position: relative;
       bottom: 39.5%;
       left: 0%;
       font-size: 16px;
