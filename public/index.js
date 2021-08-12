@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     bttButton = document.querySelector('#back-to-top');
+    $('[data-toggle="tooltip"]').tooltip();
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 100) { 
             bttButton.style.visibility = 'visible';
@@ -9,17 +10,6 @@ $(document).ready(function(){
     }); 
 });
 
-/*
-function disableScrolling() {
-    setTimeout(function() {
-        document.body.style.overflow = 'hidden';
-    }, 5000);
-}
-  
-function enableScrolling() {
-    document.body.style.overflow = '';
-}
-*/
 
 document.addEventListener("DOMContentLoaded", function(){
 
