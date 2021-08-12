@@ -99,8 +99,8 @@ body::-webkit-scrollbar-thumb {
   color: var(--tertiary-color);
 }
 
-.navbar.bg-primary {
-  border: 1px solid #282828;
+.bg-primary {
+  background-color: var(--tertiary-color) !important;
 }
 
 .navbar.bg-dark {
@@ -245,10 +245,6 @@ svg:hover {
       border-radius: 0px;
     }
 
-    .bg-primary {
-      background-color: var(--translucent-black);
-    }
-
     .card-outline-primary {
       color: var(--tertiary-color);
       border-color: var(--tertiary-color);
@@ -268,7 +264,6 @@ svg:hover {
       display:block;
       width: 100%;
       margin: 0px auto;
-      border-bottom:1px solid var(--tertiary-color);
     }
 
     .top-jumbotron {
@@ -316,6 +311,7 @@ svg:hover {
   }
 
     footer {
+      margin-top: 5%;
       background-image: url(assets/favicon_io/favicon-16x16.png);
       height:16px;
     }
@@ -345,7 +341,12 @@ svg:hover {
     .name-tag {
       font-size: 32px;
       font-weight: normal;
-      border-bottom: 1px dotted var(--tertiary-color)
+    }
+
+    @media only screen and (min-width: 600px) {
+      .name-tag {
+        border-bottom: 1px dotted var(--tertiary-color);
+      }
     }
 
     figure figcaption {
@@ -408,20 +409,15 @@ svg:hover {
       }
     }
 
-    /*
-    .display-picture, .jumbotron-display-picture {
-      position: absolute;
-      max-width: 200px;
-      height: auto;
-      bottom: 50%;
-      left: calc(50% - 100px); //* Image width is 287px 
-      border-bottom-left-radius: 100%;
-      border-bottom-right-radius: 100%;
-      border-top-left-radius: 100%;
-      border-top-right-radius: 100%;
+    .content-container {
+      padding-bottom: 20%;
+      padding-top: 10%;
+      border-bottom: 1px solid var(--tertiary-color);
+      margin-top: 1em;
     }
 
-    .jumbotron-display-picture-caption {
-      text-align: center;
+    .progress {
+      background-color: var(--secondary-color);
+      height: 8px;
+      width: 100%;
     }
-    */
