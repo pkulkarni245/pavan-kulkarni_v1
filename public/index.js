@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     bttButton = document.querySelector('#back-to-top');
+    alert("Site Under Construction");
     $('[data-toggle="tooltip"]').tooltip();
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 100) { 
