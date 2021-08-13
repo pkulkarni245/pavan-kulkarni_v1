@@ -421,3 +421,7 @@ svg:hover {
       height: 8px;
       width: 100%;
     }
+
+    .text-muted {
+      color: var(--secondary-color) !important;
+    }

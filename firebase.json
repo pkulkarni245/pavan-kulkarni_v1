@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site"  : "pavankulkarni",
     "public": "public",
     "ignore": [
       "firebase.json",
