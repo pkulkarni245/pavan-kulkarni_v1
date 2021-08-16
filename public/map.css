@@ -1,0 +1,66 @@
+  .dotmap {
+    width: 100%;
+    overflow: hidden;
+  }
+  .dotmap .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .dot {
+    float: left;
+    display: inline-block;
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    background: #ccc;
+    margin: 2px;
+  }
+  
+  .water {
+    background: #C5EFF7;
+  }
+  
+  .north-america {
+    background: #90C695;
+  }
+  
+  .south-america {
+    background: #E26A6A;
+  }
+  
+  .europe {
+    background: #BE90D4;
+  }
+  
+  .africa {
+    background: #FDE3A7;
+  }
+  
+  .asia {
+    background: #F4B350;
+  }
+  
+  .australia {
+    background: #1E824C;
+  }
+  
+  .minimal .water {
+    background: transparent;
+  }
+  .minimal .north-america, .minimal .south-america, .minimal .europe, .minimal .africa, .minimal .asia, .minimal .australia {
+    background: #eee;
+  }
+  
+  @keyframes water {
+    0% {
+      background: lightcyan;
+    }
+    50% {
+      background: paleturquoise;
+    }
+    100% {
+      background: lightcyan;
+    }
+  }
