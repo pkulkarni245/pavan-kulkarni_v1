@@ -614,3 +614,45 @@ svg:hover {
     .timeline-body > p + p {
       margin-top: 5px;
     }
+
+    .world-map {
+      width: 100%;
+    }
+
+    .pinpoint {
+      display: inline-block;
+      color: var(--tertiary-color);
+      text-transform: uppercase;
+      padding-left: 5px;
+      padding-right: 5px;
+      cursor: default;
+      
+    }
+
+    .pinpoint > h4 {
+      color: var(--tertiary-color);
+    }
+
+    .pinpoint > h4:hover {
+      color: var(--quaternary-color);
+    }
+
+    .pinpoint:hover {
+      color: var(--quaternary-color);
+    }
+
+    .pinpoint-english {
+      position: relative;
+      top: 20%;      
+    }
+
+    .pinpoint-no-hover {
+      background-color: var(--tertiary-color);
+      width: 1px;
+      height: 1px;
+      vertical-align: middle;
+    }
+
+    .pinpoint-no-hover:hover {
+      color: var(--tertiary-color);
+    }
