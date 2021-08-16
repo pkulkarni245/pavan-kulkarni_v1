@@ -1,3 +1,10 @@
-highlight country on hover highlight and vice versa by adding CSS to XML instead of hard coding colors
-mark all touched countries
-on hover all relevant countries to quaternary
+MAP:
+    -highlight country on hover highlight and vice versa by adding CSS to XML instead of hard coding colors
+    -mark all touched countries
+    -on hover all relevant countries to quaternary
+    -hover on country to see name
+    -hindi, kannada, marathi clubbed
+    -consider both english and french for canada
+
+SCROLLBAR:
+    -quaternary on hover or depression
