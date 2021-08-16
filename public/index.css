@@ -265,10 +265,6 @@ svg:hover {
       color: var(--tertiary-color);
     }
 
-    h4 {
-      margin-top: 5% !important;
-    }
-
     .jumbotron {
       text-align: center;
       display:block;
@@ -502,6 +498,7 @@ svg:hover {
       background-color: var(--quaternary-color);
       left: 50%;
       margin-left: -1.5px;
+      border-radius: 1rem;
     }
     
     .timeline > li {
