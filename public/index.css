@@ -615,8 +615,17 @@ svg:hover {
       margin-top: 5px;
     }
 
+    .image-container {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      height: fit-content;
+    }
+
     .world-map {
       width: 100%;
+      height: 700px;
     }
 
     .pinpoint {
@@ -656,3 +665,19 @@ svg:hover {
     .pinpoint-no-hover:hover {
       color: var(--tertiary-color);
     }
+
+    .world-map {
+      width: 100%;
+    }
+
+    .land {
+				fill: var(--primary-color);
+				fill-opacity: 1;
+				stroke: var(--tertiary-color);
+				stroke-opacity: 1;
+				stroke-width: 0.5;
+			}
+
+      .land:hover {
+        fill: var(--tertiary-color);
+      }
