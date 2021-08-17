@@ -4,7 +4,22 @@ MAP:
     -on hover all relevant countries to quaternary
     -hover on country to see name
     -hindi, kannada, marathi clubbed
-    -consider both english and french for canada
+
+    -background border radius (may be will have to implement on container) to give globular effect, especially in light mode
 
 SCROLLBAR:
     -quaternary on hover or depression
+
+PROJECTS:
+    -fade in title animation overlay: https://www.w3schools.com/howto/howto_css_image_overlay.asp
+    -modal gallery modal popup transition: https://www.w3schools.com/howto/howto_css_modal_images.asp
+    -lightbox popup modal: https://www.w3schools.com/howto/howto_js_lightbox.asp
+
+LIGHT MODE
+
+REIMPLEMENT FLUENT DESIGN instead of sharp metro
+
+DP MODAL, LIGHTBOX
+
+GALLERY of Jumbotron images, with modal (gallery depending on theme?)
+
