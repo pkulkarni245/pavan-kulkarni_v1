@@ -53,6 +53,10 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--tertiary-color);
 }
 
+nav {
+  position: sticky;
+}
+
 #mynav {
   background-color: var(--primary-color);
   padding-bottom: 0px;
@@ -622,19 +626,15 @@ svg:hover {
       text-transform: uppercase;
       padding-left: 5px;
       padding-right: 5px;
-      cursor: default;
+      cursor: pointer;
       
     }
 
-    .pinpoint > h4 {
+    .pinpoint{
       color: var(--secondary-color);
     }
 
-    .pinpoint > h4:hover {
-      color: var(--quaternary-color);
-    }
-
-    .pinpoint:hover {
+    .pinpoint .pinpint-active {
       color: var(--quaternary-color);
     }
 
@@ -650,7 +650,8 @@ svg:hover {
       position: relative;
       right: -10%;
       background-color: var(--color-map-water);
-      
+      border-radius: 20%;
+      border: 1px solid var(--tertiary-color);
     }
 
     @media only screen and (max-width: 1040px) {
@@ -663,7 +664,7 @@ svg:hover {
 				fill: var(--secondary-color-translucent);
 				fill-opacity: 1;
 				stroke: var(--tertiary-color);
-				stroke-opacity: 1;
+        stroke-opacity: 0.1;
 				stroke-width: 0.5;
 			}
 
@@ -676,10 +677,13 @@ svg:hover {
       }
       
       .pinpoint-container {
-        border-top: 1px solid var(--secondary-color-translucent);
-        background-color: var(--color-map-water);
         margin-left: 10%;
         width: 81%;
         padding-top: 2%;
         padding-bottom: 1%;
+      }
+
+      .activated-lang {
+        fill: var(--tertiary-color);
+        color: var(--tertiary-color);
       }

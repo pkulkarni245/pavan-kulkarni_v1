@@ -1,6 +1,5 @@
 $(document).ready(function(){ 
     bttButton = document.querySelector('#back-to-top');
-    $('[data-toggle="tooltip"]').tooltip();
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 100) { 
             bttButton.style.visibility = 'visible';
