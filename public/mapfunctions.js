@@ -42,9 +42,8 @@ $(document).ready(function(){
         ttEle.text($(this).attr("title"));
         /*var left = $(this).pageX - $(this).offset().left + 100;
         var top = $(this).pageY - $(this).offset().top + 130;*/
-        ttEle.text(event.pageX + ", " + event.pageY);
-        ttEle.css("left", event.pageX);
-        ttEle.css("top", event.pageY);
+        ttEle.css("left", event.pageX + 10);
+        ttEle.css("top", event.pageY + 10);
         ttEle.css("display","block");
     });
     $(".land").mouseout(function(){
