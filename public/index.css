@@ -33,6 +33,11 @@ body {
   color: var(--tertiary-color);
 }
 
+.tooltiptext {
+  display: none;
+  z-index: 5;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--tertiary-color);
 }
@@ -53,18 +58,10 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--tertiary-color);
 }
 
-nav {
-  position: sticky;
-}
-
 #mynav {
   background-color: var(--primary-color);
   padding-bottom: 0px;
   padding-top: 0px;
-}
-
-.nav-link {
-  z-index: 1;
 }
 
 .nav-link:hover {
@@ -658,10 +655,15 @@ svg:hover {
       .world-map {
         display: none;
       }
+
+      .pinpoint {
+        color: var(--tertiary-color);
+        pointer-events: none;
+      }
     }
 
     .land {
-				fill: var(--secondary-color-translucent);
+				fill: var(--secondary-color);
 				fill-opacity: 1;
 				stroke: var(--tertiary-color);
         stroke-opacity: 0.1;
@@ -671,10 +673,6 @@ svg:hover {
       .land:hover {
         fill: var(--quaternary-color);
       }
-
-      .lang-en, .lang-fr, .lang-de, .lang-es, .lang-hi, .lang-kn, .lang-ma {
-        fill: var(--secondary-color);
-      }
       
       .pinpoint-container {
         margin-left: 10%;
@@ -683,7 +681,7 @@ svg:hover {
         padding-bottom: 1%;
       }
 
-      .activated-lang {
+      .activated-en, .activated-fr, .activated-de, .activated-es, .activated-in {
         fill: var(--tertiary-color);
         color: var(--tertiary-color);
       }
