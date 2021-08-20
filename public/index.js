@@ -7,6 +7,10 @@ $(document).ready(function(){
             bttButton.style.visibility = 'hidden';
         } 
     }); 
+
+    $("#btn-404").click(function(){
+      window.location = "https://pkulkarni245.github.io";
+    });
 });
 
 

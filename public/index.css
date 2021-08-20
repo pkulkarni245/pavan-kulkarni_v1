@@ -124,6 +124,7 @@ body::-webkit-scrollbar-thumb {
 
 .nav-link {
   color: var(--tertiary-color);
+  border-radius: 20%;
 }
 
 #navbar-link {
@@ -240,12 +241,17 @@ svg:hover {
       color: var(--tertiary-color);
       border-color: var(--tertiary-color);
       font-weight: bold;
+      border-width: 1px;
     }
 
-    a> .btn-outline-primary:hover {
+    .btn-outline-primary:hover {
       background-color: var(--tertiary-color);
       color: var(--primary-color);
       border-color: var(--tertiary-color);
+    }
+
+    form > button {
+      margin-top: 5%;
     }
 
     .card {
@@ -333,15 +339,7 @@ svg:hover {
       text-align: center;
       margin-left: 0px;
       margin-right: 0px;
-    }
-
-    .btn {
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      color: var(--tertiary-color);
-    }    
+    }   
 
     figure img {
       vertical-align: top;
@@ -427,8 +425,9 @@ svg:hover {
 
     .progress {
       background-color: var(--secondary-color);
-      height: 8px;
+      height: 12px;
       width: 100%;
+      border-radius: 20%;
     }
 
     .text-muted {
@@ -537,6 +536,7 @@ svg:hover {
       position: relative;
       -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
       box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+      border-radius: 10%;
     }
     
     .timeline > li > .timeline-panel:before {
@@ -647,7 +647,7 @@ svg:hover {
       width: 81%;
       position: relative;
       right: -10%;
-      background-color: var(--color-map-water);
+      
       border-radius: 20%;
       border: 1px solid var(--tertiary-color);
     }
@@ -685,4 +685,49 @@ svg:hover {
       .activated-en, .activated-fr, .activated-de, .activated-es, .activated-in {
         fill: var(--tertiary-color);
         color: var(--tertiary-color);
+      }
+
+      .form-control::-webkit-input-placeholder {
+        color: var(--secondary-color);
+        opacity: 1;
+      }
+      
+      .form-control::-moz-placeholder {
+        color: var(--secondary-color);
+        opacity: 1;
+      }
+      
+      .form-control:-ms-input-placeholder {
+        color: var(--secondary-color);
+        opacity: 1;
+      }
+      
+      .form-control::-ms-input-placeholder {
+        color: var(--secondary-color);
+        opacity: 1;
+      }
+      
+      .form-control::placeholder {
+        color: var(--secondary-color);
+        opacity: 1;
+      }
+
+      .form-control {
+        background-color: var(--primary-color);
+        border: 1px solid var(--secondary-color);
+      }
+
+      .form-control:focus {
+        background-color: var(--secondary-color-translucent);
+        border: 1px solid var(--secondary-color);
+      }
+
+      .form-group {
+        margin: auto;
+        width: 75%;
+      }
+
+      .form-label, .form-text {
+        text-align: left;
+        display: block;
       }
