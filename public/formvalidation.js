@@ -30,9 +30,11 @@ $(document).ready(function(){
             $("contact-form-submission-feedback").text("There are errors in your form. Please check and try again.");
         }
         //*/
+        var timestamp = new Date().toString();
         var formData = {
-            "name": $('#form-name').val(),
+            "timestamp": timestamp,
             "email": $('#form-email').val(),
+            "name": $('#form-name').val(),
             "subject": $('#form-subject').val(),
             "message": $('#form-message').val(),
         }
