@@ -540,22 +540,23 @@
     <form id="contact-form">
       <div class="form-group">
         <label class="form-label mt-4" for="inputDefault" required>Full Name*</label>
-        <input type="text" class="form-control" placeholder="Full Name" id="inputDefault">
+        <input id="form-name" type="text" class="form-control" placeholder="Full Name" id="inputDefault">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1" class="form-label mt-4" required>Email Address*</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+        <input id="form-email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
         <small id="emailHelp" class="form-text text-muted">Your information will not be shared with anyone else.</small>
       </div>
       <div class="form-group">
         <label class="form-label mt-4" for="inputDefault" required>Subject*</label>
-        <input type="text" class="form-control" placeholder="" id="inputDefault">
+        <input id="form-subject" type="text" class="form-control" placeholder="" id="inputDefault">
       </div>
       <div class="form-group">
-        <label for="exampleTextarea" class="form-label mt-4" required>Message*</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        <label for="exampleTextarea" class="form-label mt-4">Message</label>
+        <textarea id="form-message" class="form-control" id="exampleTextarea" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-outline-primary" value="Submit" id="contact-form-submit">Submit</button>
+      <div id="contact-form-submission-feedback" class="form-submission-feedback">Form submitted successfully!</div>
+      <button type="submit" class="btn btn-outline-primary" value="Submit">Submit</button>
     </form>
   </div>
 
@@ -572,5 +573,13 @@
     <script src="index.js"></script>
     <script src="mapfunctions.js"></script>
     <script src="formvalidation.js"></script>
+
+    <!-- Firebase -->
+    <!-- Main -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="firebaseconfig.js"></script>
   </body>
 </html>

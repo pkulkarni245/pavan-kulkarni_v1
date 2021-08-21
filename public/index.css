@@ -15,7 +15,20 @@
   --quaternary-color: #ff1e56;
   --quaternary-color-translucent: #ff1e568f;
   --shade-black: #00000050;
-  --color-map-water: #0000ff10; /* excellent primary color for light mode*/
+  --color-map-water: #0000ff10;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color: #0000ff10;
+    --tertiary-color: #ff1e56;
+    --quaternary-color: #ffac41;
+    --color-map-water: #0000ff8f;
+  }
+
+  .world-map {
+    background-color: var(--color-map-water);
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -251,7 +264,7 @@ svg:hover {
     }
 
     form > button {
-      margin-top: 5%;
+      margin-top: 1%;
     }
 
     .card {
@@ -536,7 +549,7 @@ svg:hover {
       position: relative;
       -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
       box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-      border-radius: 10%;
+      
     }
     
     .timeline > li > .timeline-panel:before {
@@ -730,4 +743,9 @@ svg:hover {
       .form-label, .form-text {
         text-align: left;
         display: block;
+      }
+
+      .form-submission-feedback {
+        margin-top: 1%;
+        display: none;
       }
