@@ -22,20 +22,7 @@ $(document).ready(function(){
             $("#pinpoint-hi").click();
         }
     });
-
-
-    //Tooltip Functionality for Map to display Country
-    /*$(".land").hover(function(){
-        var ttText = $(this).attr("title");
-        var ttEle = $("#world-map-tooltip");
-        ttEle.text($(this).attr("title"));
-        var left = $(this).pageX - $(this).offset().left + 100;
-        var top = $(this).pageY - $(this).offset().top + 130;
-        ttEle.css("left", $(this).pageX);
-        ttEle.css("top", $(this).pageY);
-        ttEle.css("visibility","visible");
-
-    });*/
+    //Tooltip Function
     $(".land").mouseover(function(){
         var ttText = $(this).attr("title");
         var ttEle = $("#world-map-tooltip");
