@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     $("#contact-form").submit(function(evt){
+        evt.preventDefault(); //Prevent the default form submit action
         /*
         evt.preventDefault(); //Prevent the default form submit action
         var uname = " ";
@@ -30,19 +31,26 @@ $(document).ready(function(){
             $("contact-form-submission-feedback").text("There are errors in your form. Please check and try again.");
         }
         //*/
-        var timestamp = new Date().toString();
-        var formData = {
-            "timestamp": timestamp,
-            "email": $('#form-email').val(),
-            "name": $('#form-name').val(),
-            "subject": $('#form-subject').val(),
-            "message": $('#form-message').val(),
-        }
-        evt.preventDefault(); //Prevent the default form submit action
+        var userip;
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+  
+            // Setting text of element P with id gfg
+            userip = data.ip;
+            var timestamp = new Date().toString();
+            var formData = {
+                "timestamp": timestamp,
+                "email": $('#form-email').val(),
+                "name": $('#form-name').val(),
+                "subject": $('#form-subject').val(),
+                "message": $('#form-message').val(),
+                "ip": userip,
+            }      
 
             firebase.database().ref('/ContactFormResponses').push( formData );
             $("#contact-form").trigger("reset");
             $("#contact-form-submission-feedback").css("display","block");
             $("contact-form-submission-feedback").text("Your response has been recorded successfully!");
+        })
+        
     });
 });
