@@ -31,10 +31,10 @@ $(document).ready(function(){
         var top = $(this).pageY - $(this).offset().top + 130;*/
         ttEle.css("left", event.pageX + 10);
         ttEle.css("top", event.pageY + 10);
-        ttEle.css("display","block");
+        ttEle.toggleClass("tt-activated");
     });
     $(".land").mouseout(function(){
         var ttEle = $("#world-map-tooltip");
-        ttEle.css("display","none");
+        ttEle.toggleClass("tt-activated");
     });
 });

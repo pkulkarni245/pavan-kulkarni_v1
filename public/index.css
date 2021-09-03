@@ -12,28 +12,123 @@
   --secondary-color: #323232;
   --secondary-color-translucent: #32323250;
   --tertiary-color: #ffac41;
+  --tertiary-color-translucent: #ffac4150;
   --quaternary-color: #ff1e56;
   --quaternary-color-translucent: #ff1e568f;
   --shade-black: #00000050;
   --color-map-water: #0000ff10;
 }
 
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
   :root {
-    --primary-color: #0000ff10;
-    --tertiary-color: #ff1e56;
-    --quaternary-color: #ffac41;
+    --primary-color: #fff;
+    --tertiary-color: #ffac41;
+    --quaternary-color: #ff1e56;
     --color-map-water: #0000ff8f;
   }
+  
+}*/
 
-  .world-map {
-    background-color: var(--color-map-water);
-  }
+body {
+  overflow: hidden;
 }
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  margin: -76px 0 0 -76px;
+  border: 6px solid var(--secondary-color-translucent);
+  border-radius: 50%;
+  border-top: 6px solid var(--tertiary-color);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 0.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: var(--primary-color);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+#loader {
+  z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);  /* IE 9 */
+  transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);  /* IE 9 */
+  transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+
+  -webkit-transition: all 0.3s 1s ease-out;
+          transition: all 0.3s 1s ease-out;
+}
+
+
+
+
+
 
 @media only screen and (max-width: 600px) {
   :root {
     --tertiary-color: silver;
+  }
+  .world-map {
+    background-color: var(--color-map-water);
   }
 }
 
@@ -50,8 +145,15 @@ body {
   position: absolute;
   display: none;
   z-index: 5;
-  background-color: var(--secondary-color-translucent);
-  border-radius: 100%;
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  border-radius: 0.25rem;
+  opacity: 75%;
+}
+
+.tt-activated {
+  display: block;
+  transition: 0.25s linear;
 }
 
 /* Tooltip text */
@@ -59,7 +161,7 @@ body {
   display: none;
   width: 120px;
   background-color: black;
-  color: #fff;
+  color: var(--quaternary-color);
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
@@ -93,18 +195,24 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-track {
   background-color: var(--primary-color);
   box-shadow: inset 0 0 0 var(--tertiary-color);
+  transition-property: background-color;
+  transition-duration: 0.25s;
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--tertiary-color);
+  transition-property: background-color;
+  transition-duration: 0.25s;
 }
 
 body::-webkit-scrollbar-track:hover {
   background-color: var(--secondary-color);
+  transition: 0.25s linear;
 }
 
 body::-webkit-scrollbar-thumb:hover {
   background-color: var(--quaternary-color);
+  transition: 0.25s linear;
 }
 
 #mynav {
@@ -113,15 +221,24 @@ body::-webkit-scrollbar-thumb:hover {
   padding-top: 0px;
 }
 
-.nav-link:hover {
-  background-color: var(--secondary-color-translucent);
-}
-
 .nav-item {
   z-index: 1;
   padding-top: 6px;
   padding-bottom: 6px;
   margin-right: 0px;
+}
+
+.nav-item:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px var(--quaternary-color);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+}
+.nav-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: 0% 50%;
 }
 
 .double-down {
@@ -170,19 +287,10 @@ body::-webkit-scrollbar-thumb:hover {
   color: var(--tertiary-color);
 }
 
-.nav-link {
-  color: var(--tertiary-color);
-  border-radius: 20%;
-}
-
 #navbar-link {
   color: var(--tertiary-color);
   font-size: 16px;
   font-weight: bold;
-}
-
-#navbar-link:hover {
-  color: var(--quaternary-color);
 }
 
 .card-header, .card-body, .card-title {
@@ -198,9 +306,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 svg {
   fill:var(--tertiary-color);
+  transition-property: fill;
+  transition-duration: 0.25s;
 }
 svg:hover {
   fill:var(--quaternary-color);
+  transition: 0.25s linear;
 }
 
 .container-fluid {
@@ -316,10 +427,6 @@ svg:hover {
     .card-link :hover {
       color: var(--primary-color);
       background-color: var(--tertiary-color);
-    }
-
-    h3 {
-      color: var(--tertiary-color);
     }
 
     .jumbotron {
@@ -464,12 +571,6 @@ svg:hover {
       }
     }
 
-    .content-container {
-      padding-bottom: 20%;
-      padding-top: 10%;
-      border-bottom: 1px solid var(--tertiary-color);
-      margin-top: 1em;
-    }
 
     .progress {
       background-color: var(--secondary-color);
@@ -717,10 +818,13 @@ svg:hover {
 				stroke: var(--tertiary-color);
         stroke-opacity: 0.1;
 				stroke-width: 0.5;
+        transition-property: fill;
+        transition-duration: 0.25s;
 			}
 
       .land:hover {
         fill: var(--quaternary-color);
+        transition: 0.25s linear;
       }
       
       .pinpoint-container {
@@ -737,6 +841,7 @@ svg:hover {
       .activated-en, .activated-fr, .activated-de, .activated-es, .activated-in {
         fill: var(--tertiary-color);
         color: var(--tertiary-color);
+        transition: 0.25s linear;
       }
 
       .form-control::-webkit-input-placeholder {
@@ -787,4 +892,87 @@ svg:hover {
       .form-submission-feedback {
         margin-top: 1%;
         display: none;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 10%;
+        margin-bottom: 10%;
+      }
+      
+      /* To show the lines on right 
+      and left sides of the text */
+      .section-header::before, .section-header::after {
+        content: "";
+        flex: 1;
+        border-top: 3px solid var(--tertiary-color);
+      }
+      .section-header::after{
+        border-bottom-right-radius: 100%;
+        border-top-right-radius: 100%;
+        flex: 1;
+      }
+      .section-header::before {
+        border-bottom-left-radius: 100%;
+        border-top-left-radius: 100%;
+      }
+      
+      /* Space on left and right sides of text */
+      .section-header:not(:empty)::before {
+        margin-right: 1em;
+      }
+      
+      .section-header:not(:empty)::after {
+        margin-left: 1em;
+      }
+
+      .muted-subheading {
+        margin-bottom: 10%;
+      }
+
+      a .nav-link .active {
+        color: var(--tertiary-color);
+      }
+
+      .nav-tabs {
+        border-color: var(--tertiary-color);
+      }
+
+      .nav-tabs {
+        border-bottom: 1px dotted var(--tertiary-color);
+      }
+
+      .nav-tabs .nav-link {
+        border-radius: 0.25rem;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: var(--quaternary-color);
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .nav-tabs .nav-link.active:hover {
+        color: var(--quaternary-color);
+      }
+
+      .nav-tabs .nav-link:hover {
+        color: var(--tertiary-color);
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .nav-link {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--tertiary-color);
+      }
+
+      .tab-content {
+        padding-top: 1em;
       }
