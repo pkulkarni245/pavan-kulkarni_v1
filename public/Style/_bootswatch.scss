@@ -1,10 +1,10 @@
-// Cyborg 5.1.0
+// Lux 5.1.0
 // Bootswatch
 
 
 // Variables
 
-$web-font-path: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" !default;
+$web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" !default;
 @if $web-font-path {
   @import url($web-font-path);
 }
@@ -12,132 +12,173 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&di
 // Navbar
 
 .navbar {
-  &.bg-primary {
-    border: 1px solid $gray-700;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &-nav {
+    .nav-link {
+      padding-top: .715rem;
+      padding-bottom: .715rem;
+    }
   }
 
-  &.bg-dark {
-    background-color: $body-bg !important;
-    border: 1px solid $gray-700;
+  &-brand {
+    margin-right: 2rem;
   }
+}
 
-  &.bg-light {
-    background-color: $gray-500 !important;
-  }
+.bg-primary {
+  background-color: theme-color("primary") !important;
+}
 
-  &.fixed-top {
+.bg-light {
+  border: 1px solid rgba(0, 0, 0, .1);
+
+  &.navbar-fixed-top {
     border-width: 0 0 1px;
   }
 
-  &.fixed-bottom {
+  &.navbar-bottom-top {
     border-width: 1px 0 0;
   }
+}
+
+.nav-item {
+  margin-right: 2rem;
 }
 
 // Buttons
 
 .btn {
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      @if $enable-gradients {
-        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
-      } @else {
-        background-color: $value;
-      }
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+
+  &-sm {
+    font-size: 10px;
+  }
+
+  &-warning {
+    &,
+    &:hover,
+    &:not([disabled]):not(.disabled):active,
+    &:focus {
+      color: $white;
     }
   }
 }
 
-// Forms
+.btn-outline-secondary {
+  border-color: $gray-600;
+  color: $gray-600;
 
-legend {
-  color: $white;
+  &:not([disabled]):not(.disabled):hover,
+  &:not([disabled]):not(.disabled):focus,
+  &:not([disabled]):not(.disabled):active {
+    background-color: $gray-400;
+    border-color: $gray-400;
+    color: $white;
+  }
+
+  &:not([disabled]):not(.disabled):focus {
+    box-shadow: 0 0 0 .2rem rgba($gray-400, .5);
+  }
 }
 
-.form-control {
-  background-clip: border-box;
+[class*="btn-outline-"] {
+  border-width: 2px;
+}
 
-  &:disabled,
-  &[readonly] {
-    border-color: transparent;
+.border-secondary {
+  border: 1px solid $gray-400 !important;
+}
+
+// Typography
+
+body {
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.text-secondary {
+  color: $body-color !important;
+}
+
+// Tables
+
+th {
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+}
+
+.table {
+  th,
+  td {
+    padding: 1.5rem;
+  }
+
+  &-sm {
+    th,
+    td {
+      padding: .75rem;
+    }
   }
 }
 
 // Navs
 
-.nav-tabs,
-.nav-pills {
-  .nav-link {
-    color: $white;
-
-    &:hover {
-      background-color: $gray-700;
-    }
-
-    &.disabled,
-    &.disabled:hover {
-      background-color: transparent;
-      color: $nav-link-disabled-color;
-    }
-
-    &.active {
-      background-color: $primary;
-    }
-  }
-}
-
-.breadcrumb {
-  a {
-    color: $white;
-  }
-}
-
-.pagination {
-  a:hover {
-    text-decoration: none;
-  }
+.dropdown-menu {
+  font-size: $font-size-sm;
+  text-transform: none;
 }
 
 // Indicators
 
-.alert {
-  border: none;
-  color: $white;
-
-  a,
-  .alert-link {
-    color: $white;
-    text-decoration: underline;
-  }
-
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      @if $enable-gradients {
-        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
-      } @else {
-        background-color: $value;
-      }
-    }
-  }
-}
-
 .badge {
-  &.bg-dark {
-    color: $gray-900;
+  padding-top: .28rem;
+
+  &-pill {
+    border-radius: 10rem;
+  }
+
+  &.bg-secondary,
+  &.bg-light {
+    color: $dark;
   }
 }
 
 // Containers
 
 .list-group-item {
-
-  &:hover {
-    border-color: $primary;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: inherit;
   }
 }
 
-.popover {
-  &-title {
-    border-bottom: none;
+.card {
+  &-title,
+  &-header {
+    color: inherit;
   }
 }
