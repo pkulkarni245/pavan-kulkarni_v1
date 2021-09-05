@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(this).scrollTop(0);
     setTimeout(function(){
         $('body').addClass('loaded');
-        $('body').css('overflow','scroll')
+        $('body').css('overflow-y','scroll')
     }, 1000);
     bttButton = document.querySelector('#back-to-top');
     $(window).scroll(function(){ 

@@ -8,7 +8,8 @@
  */
 
 :root {
-  --primary-color: #000000;
+  --primary-color: #000;
+  --primary-color-translucent: #000c;
   --secondary-color: #323232;
   --secondary-color-translucent: #32323250;
   --tertiary-color: #ffac41;
@@ -1028,9 +1029,60 @@ svg:hover {
         max-width: 300px;
         width: auto;
         height: auto;
+        /*transition-property: opacity;
+        transition-duration: 0.25s;*/
       }
 
-      .skill-image:hover {
+      /*.skill-image:hover {
         opacity: 0.5;
-        transition: opacity 250ms ease-in-out;
+        transition: opacity 0.25s ease-in-out;
+      }*/
+
+      .image-overlay-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+
+      .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color-translucent);
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: .3s ease;
+        transition: .3s ease;
+      }
+      
+      .image-overlay-container:hover .image-overlay {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      .skill-image {
+        transition: transform 0.25s;
+      }
+
+      .image-overlay-container:hover .skill-image {
+        transform: scale(0.9);
+        transition: 0.25s ease;
+      }
+      
+      .overlay-text {
+        color: var(--tertiary-color);
+        position: absolute;
+        text-transform: uppercase;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
