@@ -986,12 +986,8 @@ svg:hover {
         border-bottom: 1px dotted var(--tertiary-color);
       }
 
-      .nav-tabs .nav-link {
-        border-radius: 0.25rem;
-      }
-
       .nav-tabs .nav-link.active {
-        color: var(--quaternary-color);
+        color: var(--tertiary-color);
         background-color: var(--primary-color);
         border-color: var(--primary-color);
       }
@@ -1009,34 +1005,18 @@ svg:hover {
       .nav-link {
         text-transform: uppercase;
         font-weight: bold;
-        color: var(--tertiary-color);
+        color: var(--secondary-color);
       }
 
       .tab-content {
         padding-top: 1em;
       }
 
-      
-
-      /*.skill-logo {
-        height: 450px;
-        width: 50%;
-        background-size: 100%;
-        background-repeat: no-repeat;
-      }*/
-
       .skill-image {
         max-width: 300px;
         width: auto;
         height: auto;
-        /*transition-property: opacity;
-        transition-duration: 0.25s;*/
       }
-
-      /*.skill-image:hover {
-        opacity: 0.5;
-        transition: opacity 0.25s ease-in-out;
-      }*/
 
       .image-overlay-container {
         display: inline-block;
