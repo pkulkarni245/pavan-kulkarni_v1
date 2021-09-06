@@ -199,7 +199,7 @@ body {
   display: block;
   transition: 0.25s linear;
 }
-/*
+
 /* Tooltip text *]/
 .tt .tttext {
   display: none;
@@ -214,9 +214,7 @@ body {
   position: absolute;
   z-index: 5;
   top: 300%;
-  right: 40%;
-
-  
+  right: 40%;  
 }
 
 /* Show the tooltip text when you mouse over the tooltip container *]/
@@ -1095,4 +1093,12 @@ li.ms-md-auto:hover {
       .company-logo {
         max-width: 100%;
         height: auto;
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+
+      .company-logo:hover {
+        transform: scale(1.05);
+        background: radial-gradient(var(--tertiary-color-translucent), var(--primary-color), var(--primary-color));
+        transition: all 0.25s ease;
       }
