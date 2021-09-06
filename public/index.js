@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(this).scrollTop(0);
     setTimeout(function(){
         $('body').addClass('loaded');
-        $('body').css('overflow-y','scroll')
+        $('body').css('overflow-y','scroll');
     }, 1000);
     bttButton = document.querySelector('#back-to-top');
     $(window).scroll(function(){ 
@@ -12,6 +12,19 @@ $(document).ready(function(){
             bttButton.style.visibility = 'hidden';
         } 
     }); 
+
+    //Tooltip Function
+    $(".tt").mouseover(function(){
+        var ttEle = $("#general-tooltip");
+        ttEle.text($(this).attr("data-tttext"));
+        ttEle.css("left", event.pageX);
+        ttEle.css("top", event.pageY + 10);
+        ttEle.toggleClass("tt-activated");
+    });
+    $(".tt").mouseout(function(){
+        var ttEle = $("#general-tooltip");
+        ttEle.toggleClass("tt-activated");
+    });
 
     $("#btn-404").click(function(){
       window.location = "https://pkulkarni245.github.io";

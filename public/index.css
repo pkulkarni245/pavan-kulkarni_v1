@@ -20,18 +20,23 @@
   --color-map-water: #0000ff10;
 }
 
-/*@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
     --primary-color: #fff;
-    --tertiary-color: #ffac41;
+    --primary-color-translucent: #fffc;
+    /*--tertiary-color: #ffac41;
     --quaternary-color: #ff1e56;
-    --color-map-water: #0000ff8f;
-  }
-  
-}*/
+    --color-map-water: #0000ff8f;*/
+  }  
+}
 
 body {
   overflow: hidden;
+}
+
+* {
+  max-width: 100%;
+  height: auto;
 }
 
 #loader {
@@ -185,7 +190,7 @@ body {
   display: none;
   z-index: 5;
   background-color: var(--primary-color);
-  color: var(--quaternary-color);
+  color: var(--tertiary-color);
   border-radius: 0.25rem;
   opacity: 75%;
 }
@@ -194,8 +199,8 @@ body {
   display: block;
   transition: 0.25s linear;
 }
-
-/* Tooltip text */
+/*
+/* Tooltip text *]/
 .tt .tttext {
   display: none;
   width: 120px;
@@ -205,7 +210,7 @@ body {
   padding: 5px 0;
   border-radius: 6px;
  
-  /* Position the tooltip text - see examples below! */
+  /* Position the tooltip text - see examples below! *]/
   position: absolute;
   z-index: 5;
   top: 300%;
@@ -214,13 +219,14 @@ body {
   
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
+/* Show the tooltip text when you mouse over the tooltip container *]/
 .tt:hover .tttext {
   display: block;
-}
+}*/
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--tertiary-color);
+  text-transform: uppercase;
 }
 
 .container-fluid {
@@ -254,6 +260,15 @@ body::-webkit-scrollbar-thumb:hover {
   transition: 0.25s linear;
 }
 
+.navbar-brand {
+  transition: all 0.25s;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+
 #mynav {
   background-color: var(--primary-color);
   padding-bottom: 0px;
@@ -280,6 +295,23 @@ body::-webkit-scrollbar-thumb:hover {
   transform-origin: 0% 50%;
 }
 
+svg {
+  fill:var(--tertiary-color);
+/*  opacity: 0.5;*/
+}
+
+/*svg:hover {
+  opacity: 1;
+}*/
+
+li.ms-md-auto {
+  opacity: 0.5;
+}
+
+li.ms-md-auto:hover {
+  opacity: 1;
+}
+
 .double-down {
   color: var(--tertiary-color);
   position: absolute;
@@ -287,8 +319,21 @@ body::-webkit-scrollbar-thumb:hover {
   bottom: 1em;
 }
 
-.double-down:hover {
-  color: var(--quaternary-color);
+#back-to-top {
+  bottom: 10px;
+  right: 10px;
+  position: fixed;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.double-down, #back-to-top {
+  opacity: 0.5;
+}
+
+.double-down:hover, #back-to-top:hover {
+  opacity: 1;
+  transition: 0.25s linear;
 }
 
 @media only screen and (max-width: 600px) {
@@ -341,16 +386,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .scrolled-up{
   transform:translateY(0); transition: all 0.3s ease-in-out;
-}
-
-svg {
-  fill:var(--tertiary-color);
-  transition-property: fill;
-  transition-duration: 0.25s;
-}
-svg:hover {
-  fill:var(--quaternary-color);
-  transition: 0.25s linear;
 }
 
 .container-fluid {
@@ -418,16 +453,6 @@ svg:hover {
       font-size: 14px;
       font-style: normal;
       margin-left: 0px;
-    }
-    
-    .flaticon-arrow-pointing-to-up:before { content: "\f13c"; }
-
-    #back-to-top {
-      bottom: 10px;
-      right: 10px;
-      position: fixed;
-      visibility: hidden;
-      z-index: 1;
     }
 
     .dropdown-menu {
@@ -941,7 +966,7 @@ svg:hover {
         font-weight: bold;
         text-transform: uppercase;
         margin-top: 10%;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
       }
       
       /* To show the lines on right 
@@ -1047,12 +1072,12 @@ svg:hover {
       }
 
       .skill-image {
-        transition: transform 0.25s;
+        transition: transform 1s;
       }
 
       .image-overlay-container:hover .skill-image {
         transform: scale(0.9);
-        transition: 0.25s ease;
+        transition: 1s ease;
       }
       
       .overlay-text {
@@ -1065,4 +1090,9 @@ svg:hover {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         text-align: center;
+      }
+
+      .company-logo {
+        max-width: 100%;
+        height: auto;
       }

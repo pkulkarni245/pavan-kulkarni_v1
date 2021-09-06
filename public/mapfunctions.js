@@ -8,6 +8,9 @@ $(document).ready(function(){
     $(".land").click(function(){
         if($(this).hasClass("lang-en")){
             $("#pinpoint-en").click();
+            /*if(($(".lang-in").hasClass("activated-in") && $(this).hasClass("activated-en")) || (!$(".lang-in").hasClass("activated-in") && !$(this).hasClass("activated-en"))){
+                $(".lang-in").click();
+            }*/
         }
         if($(this).hasClass("lang-fr")){
             $("#pinpoint-fr").click();
@@ -24,14 +27,14 @@ $(document).ready(function(){
     });
     //Tooltip Function
     $(".land").mouseover(function(){
-        var ttText = $(this).attr("title");
         var ttEle = $("#world-map-tooltip");
         ttEle.text($(this).attr("title"));
         /*var left = $(this).pageX - $(this).offset().left + 100;
         var top = $(this).pageY - $(this).offset().top + 130;*/
-        ttEle.css("left", event.pageX + 10);
+        ttEle.css("left", event.pageX);
         ttEle.css("top", event.pageY + 10);
         ttEle.toggleClass("tt-activated");
+        ttEle.css("color","var(--quaternary-color)");
     });
     $(".land").mouseout(function(){
         var ttEle = $("#world-map-tooltip");
