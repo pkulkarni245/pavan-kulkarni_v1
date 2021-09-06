@@ -8,7 +8,7 @@ MAP:
     -background border radius (may be will have to implement on container) to give globular effect, especially in light mode
 
 SCROLLBAR:
-    -quaternary on hover or depression
+    -quaternary on hover or press
 
 PROJECTS:
     -fade in title animation overlay: https://www.w3schools.com/howto/howto_css_image_overlay.asp
@@ -23,3 +23,6 @@ DP MODAL, LIGHTBOX
 
 GALLERY of Jumbotron images, with modal (gallery depending on theme?)
 
+
+
+NOSCRIPT.HTML

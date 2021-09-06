@@ -17,8 +17,10 @@ $(document).ready(function(){
     $(".tt").mouseover(function(){
         var ttEle = $("#general-tooltip");
         ttEle.text($(this).attr("data-tttext"));
-        ttEle.css("left", event.pageX);
-        ttEle.css("top", event.pageY + 10);
+        ttEle.css("left", event.pageX - 50);
+        /*if($(this).attr("data-ttpos") == "left")
+            ttEle.css("left", event.pageX - 50);*/
+        ttEle.css("top", event.pageY + 20);
         ttEle.toggleClass("tt-activated");
     });
     $(".tt").mouseout(function(){
