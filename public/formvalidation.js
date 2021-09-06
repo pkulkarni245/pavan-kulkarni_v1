@@ -49,7 +49,7 @@ $(document).ready(function(){
             firebase.database().ref('/ContactFormResponses').push( formData );
             $("#contact-form").trigger("reset");
             $("#contact-form-submission-feedback").css("display","block");
-            $("contact-form-submission-feedback").text("Your response has been recorded successfully!");
+            $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
         })
         
     });

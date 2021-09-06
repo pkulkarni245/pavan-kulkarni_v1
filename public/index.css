@@ -6,6 +6,18 @@
  *  icon pack
  *
  */
+ :root {
+  --primary-color: #00000000;
+  --primary-color-translucent: #00000000;
+  --secondary-color: #00000000;
+  --secondary-color-translucent: #00000000;
+  --tertiary-color: #00000000;
+  --tertiary-color-translucent: #00000000;
+  --quaternary-color: #00000000;
+  --quaternary-color-translucent: #00000000;
+  --shade-black: #00000000;
+  --color-map-water: #00000000;
+}  
 
 .theme-dark {
   --primary-color: #000;
