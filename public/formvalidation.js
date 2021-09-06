@@ -31,26 +31,49 @@ $(document).ready(function(){
             $("contact-form-submission-feedback").text("There are errors in your form. Please check and try again.");
         }
         //*/
-        var userip;
-        $.getJSON("https://api.ipify.org?format=json", function(data) {
-  
-            // Setting text of element P with id gfg
-            userip = data.ip;
-            var timestamp = new Date().toString();
-            var formData = {
-                "timestamp": timestamp,
-                "email": $('#form-email').val(),
-                "name": $('#form-name').val(),
-                "subject": $('#form-subject').val(),
-                "message": $('#form-message').val(),
-                "ip": userip,
-            }      
 
-            firebase.database().ref('/ContactFormResponses').push( formData );
-            $("#contact-form").trigger("reset");
-            $("#contact-form-submission-feedback").css("display","block");
-            $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
-        })
+        
+        const uname = $("#form-name").val();
+        const uemail = $("#form-email").val();
+        const usub = $("#form-sub").val();
+        const umsg = " " + $("#form-msg").val();
+
+        const rname = /^[\w'\-,.][^0-9_!¡?÷?¿\/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
+        const remail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const rsub = /[a-zA-Z]/;
+
+        if(rname.test(uname) && remail.test(uemail) && rsub.test(usub)){
+            var userip;
+            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                userip = data.ip;
+                var timestamp = new Date().toString();
+                var formData = {
+                    "timestamp": timestamp,
+                    "email": uemail,
+                    "name": uname,
+                    "subject": usub,
+                    "message": umsg,
+                    "ip": userip,
+                }      
+                firebase.database().ref('/ContactFormResponses').push(formData);
+                $("#contact-form").trigger("reset");
+                $("#contact-form-submission-feedback").css("opacity","1");
+                $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
+            });
+        }
+        else{
+            $("#contact-form-submission-feedback").css("opacity","1");
+            $("#contact-form-submission-feedback").html("There are errors in your form:<br>");
+            if(!rname.test(uname))
+                $("#contact-form-submission-feedback").html($("#contact-form-submission-feedback").html() + "Invalid Name <br>");
+            if(!remail.test(uemail))
+                $("#contact-form-submission-feedback").html($("#contact-form-submission-feedback").html() + "Invalid Email <br>");
+            if(!rsub.test(usub))
+                $("#contact-form-submission-feedback").html($("#contact-form-submission-feedback").html() + "Invalid Subject");
+        }
+
+
+        
         
     });
 });

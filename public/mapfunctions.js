@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
     $(".pinpoint").click(function(){
+        $("#map-help-text").css("opacity","0");//disable help text once no longer required
         var lang = $(this).attr("id").substr(9,2);
         if(lang === "hi" || lang === "kn" || lang === "ma")
             lang = "in";
@@ -29,8 +30,6 @@ $(document).ready(function(){
     $(".land").mouseover(function(){
         var ttEle = $("#world-map-tooltip");
         ttEle.text($(this).attr("title"));
-        /*var left = $(this).pageX - $(this).offset().left + 100;
-        var top = $(this).pageY - $(this).offset().top + 130;*/
         ttEle.css("left", event.pageX);
         ttEle.css("top", event.pageY + 10);
         ttEle.toggleClass("tt-activated");

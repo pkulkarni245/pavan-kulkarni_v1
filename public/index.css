@@ -6,18 +6,6 @@
  *  icon pack
  *
  */
- :root {
-  --primary-color: #00000000;
-  --primary-color-translucent: #00000000;
-  --secondary-color: #00000000;
-  --secondary-color-translucent: #00000000;
-  --tertiary-color: #00000000;
-  --tertiary-color-translucent: #00000000;
-  --quaternary-color: #00000000;
-  --quaternary-color-translucent: #00000000;
-  --shade-black: #00000000;
-  --color-map-water: #00000000;
-}  
 
 .theme-dark {
   --primary-color: #000;
@@ -28,7 +16,7 @@
   --tertiary-color-translucent: #ffac4150;
   --quaternary-color: #ff1e56;
   --quaternary-color-translucent: #ff1e568f;
-  --shade-black: #00000050;
+  --shade-primary: #00000050;
   --color-map-water: #0000ff10;
 }
 .theme-light {
@@ -40,7 +28,7 @@
   --tertiary-color-translucent: #ffac4150;
   --quaternary-color: #ff1e56;
   --quaternary-color-translucent: #ff1e568f;
-  --shade-black: #00000050;
+  --shade-primary: #ffffff50;
   --color-map-water: #0000ff10;
 }
 
@@ -87,11 +75,15 @@ html, body {
 
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
+  25% { transform: rotate(30deg); }
+  75% { transform: rotate(330deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
+  25% { transform: rotate(30deg); }
+  75% { transform: rotate(330deg); }
   100% { transform: rotate(360deg); }
 }
 
@@ -652,15 +644,15 @@ li.ms-md-auto:hover {
       bottom: 39.5%;
       left: 0%;
       font-size: 16px;
-      background-color: var(--shade-black);
+      background-color: var(--shade-primary);
     }
 
     @media only screen and (max-width: 600px) {
       figure figcaption {
-        background-color: var(shade-black);
+        background-color: var(shade-primary);
       }
       .jumbotron-description {
-        background-color: var(--shade-black);
+        background-color: var(--shade-primary);
       }
     }
 
@@ -903,6 +895,10 @@ li.ms-md-auto:hover {
         color: var(--tertiary-color);
         pointer-events: none;
       }
+
+      #map-help-text {
+        opacity: 0;
+      }
     }
 
     .land {
@@ -935,6 +931,11 @@ li.ms-md-auto:hover {
         fill: var(--tertiary-color);
         color: var(--tertiary-color);
         transition: 0.25s linear;
+      }
+
+      #map-help-text {
+        transition-property: opacity;
+        transition-duration: 0.25s;
       }
 
       .form-control::-webkit-input-placeholder {
@@ -984,7 +985,9 @@ li.ms-md-auto:hover {
 
       .form-submission-feedback {
         margin-top: 1%;
-        display: none;
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 0.25s;
       }
 
       .section-header {
