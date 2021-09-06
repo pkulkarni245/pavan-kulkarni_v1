@@ -32,15 +32,6 @@
   --color-map-water: #0000ff10;
 }
 
-/*@media (prefers-color-scheme: light) {
-  :root {
-    --primary-color: #fff;
-    --primary-color-translucent: #fffc;
-    /*--tertiary-color: #ffac41;
-    --quaternary-color: #ff1e56;
-    --color-map-water: #0000ff8f;*]/
-  }  
-}*/
 
 body {
   overflow: hidden;
