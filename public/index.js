@@ -29,7 +29,7 @@ $(document).ready(function(){
     });
 
     $("#btn-404").click(function(){
-      window.location = "https://pkulkarni245.github.io";
+      window.location = "index.html";
     });
 
     

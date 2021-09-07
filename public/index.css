@@ -7,6 +7,7 @@
  *
  */
 
+
 .theme-dark {
   --primary-color: #000;
   --primary-color-translucent: #000c;
@@ -35,6 +36,36 @@
 
 body {
   overflow: hidden;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  body.noscript, body.page404 {
+    --primary-color: #fff;
+    --primary-color-translucent: #fffc;
+    --secondary-color: #323232;
+    --secondary-color-translucent: #32323250;
+    --tertiary-color: #ffac41;
+    --tertiary-color-translucent: #ffac4150;
+    --quaternary-color: #ff1e56;
+    --quaternary-color-translucent: #ff1e568f;
+    --shade-primary: #ffffff50;
+    --color-map-water: #0000ff10;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body.noscript, body.page404 {
+    --primary-color: #000;
+    --primary-color-translucent: #000c;
+    --secondary-color: #323232;
+    --secondary-color-translucent: #32323250;
+    --tertiary-color: #ffac41;
+    --tertiary-color-translucent: #ffac4150;
+    --quaternary-color: #ff1e56;
+    --quaternary-color-translucent: #ff1e568f;
+    --shade-primary: #00000050;
+    --color-map-water: #0000ff10;
+  }
 }
 
 html, body {
@@ -202,7 +233,7 @@ body {
 .tooltiptext {
   position: absolute;
   display: none;
-  z-index: 5;
+  z-index: 2;
   background-color: var(--primary-color);
   color: var(--tertiary-color);
   border-radius: 0.25rem;
@@ -213,28 +244,6 @@ body {
   display: block;
   transition: 0.25s linear;
 }
-
-/* Tooltip text *]/
-.tt .tttext {
-  display: none;
-  width: 120px;
-  background-color: black;
-  color: var(--quaternary-color);
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! *]/
-  position: absolute;
-  z-index: 5;
-  top: 300%;
-  right: 40%;  
-}
-
-/* Show the tooltip text when you mouse over the tooltip container *]/
-.tt:hover .tttext {
-  display: block;
-}*/
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--tertiary-color);
@@ -800,7 +809,7 @@ li.ms-md-auto:hover {
       left: 50%;
       margin-left: -25px;
       background-color: #999999;
-      z-index: 100;
+      z-index: 1;
       border-top-right-radius: 50%;
       border-top-left-radius: 50%;
       border-bottom-right-radius: 50%;
