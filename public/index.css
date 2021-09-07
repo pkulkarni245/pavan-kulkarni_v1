@@ -228,6 +228,11 @@ html, body {
 body {
   background-color: var(--primary-color);
   color: var(--tertiary-color);
+  -ms-overflow-style: none;  /* Hide scrollbar on IE */
+  scrollbar-width: none;  /* Hide scrollbar on firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .tooltiptext {
@@ -253,6 +258,8 @@ h1, h2, h3, h4, h5, h6 {
 .container-fluid {
   background-color: var(--primary-color);
 }
+
+/* no need of custom scrollbar as scroll progress bar implemented
 
 body::-webkit-scrollbar {
   width: 0.1em;
@@ -280,6 +287,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: var(--quaternary-color);
   transition: 0.25s linear;
 }
+*/
 
 .navbar-brand {
   transition: all 0.25s;
@@ -1191,4 +1199,13 @@ li.ms-md-auto:hover {
       .text-link:hover:after { 
         width: 100%; 
         left: 0; 
+      }
+
+      #scroll-progress {
+        position: fixed;
+        top: 0%;
+        width: 0%;
+        height: 4px;
+        background: var(--quaternary-color);
+        z-index: 10000;
       }
