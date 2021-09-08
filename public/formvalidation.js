@@ -63,7 +63,7 @@ $(document).ready(function(){
         }
         else{
             $("#contact-form-submission-feedback").css("opacity","1");
-            $("#contact-form-submission-feedback").html("There are errors in your form:<br>");
+            $("#contact-form-submission-feedback").html("Some errors exist in your form submission:<br>");
             if(!rname.test(uname))
                 $("#contact-form-submission-feedback").html($("#contact-form-submission-feedback").html() + "Invalid Name <br>");
             if(!remail.test(uemail))
