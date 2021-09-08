@@ -289,6 +289,63 @@ body::-webkit-scrollbar-thumb:hover {
 }
 */
 
+#theme-button {
+  cursor: pointer;
+}
+
+.text-link-center-effect{
+  text-decoration: none;
+  margin-bottom: 1em;
+}
+
+a.text-link-center-effect {
+  color: var(--tertiary-color);
+}
+
+.text-link-center-effect:hover {
+  color: var(--quaternary-color);
+}
+
+.text-link-center-effect:after {
+  display: block;
+  content: '';
+  border-bottom: solid 3px var(--quaternary-color);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+  transform-origin: 50% 50%;
+}
+.text-link-center-effect:hover:after {
+  transform: scaleX(1);
+  transform-origin: 50% 50%;
+}
+
+.text-link {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+.text-link:hover {
+  color: var(--quaternary-color);
+}
+.text-link:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0%;
+  position: absolute;
+  background: var(--quaternary-color);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 75%;
+}
+.text-link:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
 .navbar-brand {
   transition: all 0.25s;
 }
@@ -869,12 +926,8 @@ li.ms-md-auto:hover {
       cursor: pointer; 
     }
 
-    .pinpoint{
-      color: var(--secondary-color);
-    }
-
-    .pinpoint .pinpint-active {
-      color: var(--quaternary-color);
+    .pinpoint-active.pinpoint:hover {
+      color: var(--tertiary-color);
     }
 
     .map-container {
@@ -1145,61 +1198,6 @@ li.ms-md-auto:hover {
         transition: all 0.25s ease;
       }
       
-      #theme-button {
-        cursor: pointer;
-      }
-
-      .text-link-center-effect{
-        color: var(--tertiary-color);
-        text-decoration: none;
-        color: var(--tertiary-color);
-        margin-bottom: 1em;
-      }
-
-      .text-link-center-effect:hover {
-        color: var(--quaternary-color);
-      }
-
-      .text-link-center-effect:after {
-        display: block;
-        content: '';
-        border-bottom: solid 3px var(--quaternary-color);  
-        transform: scaleX(0);  
-        transition: transform 250ms ease-in-out;
-        transform-origin: 50% 50%;
-      }
-      .text-link-center-effect:hover:after {
-        transform: scaleX(1);
-        transform-origin: 50% 50%;
-      }
-
-      .text-link {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        text-decoration: none;
-        color: var(--tertiary-color);
-      }
-      .text-link:hover {
-        color: var(--quaternary-color);
-      }
-      .text-link:after {    
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 2px;
-        left: 0%;
-        position: absolute;
-        background: var(--quaternary-color);
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 75%;
-      }
-      .text-link:hover:after { 
-        width: 100%; 
-        left: 0; 
-      }
-
       #scroll-progress {
         position: fixed;
         top: 0%;
