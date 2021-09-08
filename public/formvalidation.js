@@ -43,23 +43,20 @@ $(document).ready(function(){
         const rsub = /[a-zA-Z]/;
 
         if(rname.test(uname) && remail.test(uemail) && rsub.test(usub)){
-            var userip;
-            $.getJSON("https://api.ipify.org?format=json", function(data) {
-                userip = data.ip;
-                var timestamp = new Date().toString();
-                var formData = {
-                    "timestamp": timestamp,
-                    "email": uemail,
-                    "name": uname,
-                    "subject": usub,
-                    "message": umsg,
-                    "ip": userip,
-                }      
-                firebase.database().ref('/ContactFormResponses').push(formData);
-                $("#contact-form").trigger("reset");
-                $("#contact-form-submission-feedback").css("opacity","1");
-                $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
-            });
+            var userip = localStorage.lastIP;
+            var timestamp = new Date().toString();
+            var formData = {
+                "timestamp": timestamp,
+                "email": uemail,
+                "name": uname,
+                "subject": usub,
+                "message": umsg,
+                "ip": userip,
+            }      
+            firebase.database().ref('/ContactFormResponses').push(formData);
+            $("#contact-form").trigger("reset");
+            $("#contact-form-submission-feedback").css("opacity","1");
+            $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
         }
         else{
             $("#contact-form-submission-feedback").css("opacity","1");
