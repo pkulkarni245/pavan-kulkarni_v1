@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
     deviceName= getUA();
     $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("https://www.geoplugin.net/json.gp?ip=" + data.ip, function(datadetails){
+        $.getJSON("http://ip-api.com/json/" + data.ip, function(datadetails){
             var timestamp = new Date().toString();
             var vNo = $("#versionNumber").text().substring(1);
             var formData = {
@@ -47,12 +47,10 @@ $(document).ready(function(){
                 "last_uid" : lastUID,
                 "last_version" : lastVersion,
                 "device": deviceName,
-                "ip" : datadetails.geoplugin_request,
-                "city" : datadetails.geoplugin_city,
-                "continent" : datadetails.geoplugin_continentName,
-                "country" : datadetails.geoplugin_countryName,
-                "ip_latitude" : datadetails.geoplugin_latitude,
-                "ip_longitude" : datadetails.geoplugin_longitude,
+                "city" : datadetails.city,
+                "country" : datadetails.country,
+                "ip_latitude" : datadetails.latitude,
+                "ip_longitude" : datadetails.longitude,
                 "permission" : "pre",
                 "latitude" : "unknown",
                 "longitude" : "unknown",

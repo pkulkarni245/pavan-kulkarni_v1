@@ -302,9 +302,6 @@ a.text-link-center-effect {
   color: var(--tertiary-color);
 }
 
-.text-link-center-effect:hover {
-  color: var(--quaternary-color);
-}
 
 .text-link-center-effect:after {
   display: block;
@@ -1207,4 +1204,6 @@ li.ms-md-auto:hover {
         z-index: 10000;
       }
 
-      
+      .noscript-link:hover {
+        color: var(--quaternary-color);
+      }
