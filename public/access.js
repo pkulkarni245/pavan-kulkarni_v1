@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
     deviceName= getUA();
     $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("http://www.geoplugin.net/json.gp?ip=" + data.ip, function(datadetails){
+        $.getJSON("https://www.geoplugin.net/json.gp?ip=" + data.ip, function(datadetails){
             var timestamp = new Date().toString();
             var vNo = $("#versionNumber").text().substring(1);
             var formData = {
