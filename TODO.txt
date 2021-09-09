@@ -4,6 +4,8 @@ tnc modal box
 capture rough location before asking, edit if allowed, to record even if site closed before request respose, capture time spent, and max vertical scroll (to see viewed content)
 capture last visit through local storage
 
+CAPTURE CURRENT AND LAST VERSION NUMBERS TO ADD What's New page from json file, ON LINK of version number in footer (Modal?)
+
 hero image cover, pure on hover, jumbotron DP, text reformatting (move below jumbotron)
 
 navbar refinement

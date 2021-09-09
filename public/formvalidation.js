@@ -44,6 +44,7 @@ $(document).ready(function(){
 
         if(rname.test(uname) && remail.test(uemail) && rsub.test(usub)){
             var userip = localStorage.lastIP;
+            var uid = localStorage.lastUID;
             var timestamp = new Date().toString();
             var formData = {
                 "timestamp": timestamp,
@@ -52,6 +53,7 @@ $(document).ready(function(){
                 "subject": usub,
                 "message": umsg,
                 "ip": userip,
+                "uid" : uid,
             }      
             firebase.database().ref('/ContactFormResponses').push(formData);
             $("#contact-form").trigger("reset");
