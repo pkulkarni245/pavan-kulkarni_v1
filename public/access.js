@@ -33,9 +33,13 @@ $(document).ready(function(){
         Object.keys(ua).map(v => navigator.userAgent.match(ua[v]) && (device = v));
         return device;
     }
+    /* 
+    https://ipapi.com/documentation  ---YELAHANKA
+    https://ipapi.co/api/?javascript--jquery#location-of-a-specific-ip ---BENGALURU
+    */
     deviceName= getUA();
     $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("http://ip-api.com/json/" + data.ip + "?access_key=a5e235999f6fd02918f5b9d45728612d", function(datadetails){
+        $.getJSON("https://ipapi.co/" + data.ip + "/json", function(datadetails){
             var timestamp = new Date().toString();
             var vNo = $("#versionNumber").text().substring(1);
             var formData = {
@@ -48,7 +52,7 @@ $(document).ready(function(){
                 "last_version" : lastVersion,
                 "device": deviceName,
                 "city" : datadetails.city,
-                "continent" : datadetails.continent_name,
+                "continent" : datadetails.continent_code,
                 "country" : datadetails.country_name,
                 "ip_latitude" : datadetails.latitude,
                 "ip_longitude" : datadetails.longitude,
