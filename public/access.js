@@ -36,6 +36,8 @@ $(document).ready(function(){
     /* 
     https://ipapi.com/documentation  ---YELAHANKA
     https://ipapi.co/api/?javascript--jquery#location-of-a-specific-ip ---BENGALURU
+
+    !!!https://firebase.google.com/docs/rules/insecure-rules#database!!!
     */
     deviceName= getUA();
     $.getJSON("https://api.ipify.org?format=json", function(data) {
