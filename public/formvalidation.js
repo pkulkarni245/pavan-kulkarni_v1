@@ -43,27 +43,26 @@ $(document).ready(function(){
         const rsub = /[a-zA-Z]/;
 
         if(rname.test(uname) && remail.test(uemail) && rsub.test(usub)){
-            var userip;
-            $.getJSON("https://api.ipify.org?format=json", function(data) {
-                userip = data.ip;
-                var timestamp = new Date().toString();
-                var formData = {
-                    "timestamp": timestamp,
-                    "email": uemail,
-                    "name": uname,
-                    "subject": usub,
-                    "message": umsg,
-                    "ip": userip,
-                }      
-                firebase.database().ref('/ContactFormResponses').push(formData);
-                $("#contact-form").trigger("reset");
-                $("#contact-form-submission-feedback").css("opacity","1");
-                $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
-            });
+            var userip = localStorage.lastIP;
+            var uid = localStorage.lastUID;
+            var timestamp = new Date().toString();
+            var formData = {
+                "timestamp": timestamp,
+                "email": uemail,
+                "name": uname,
+                "subject": usub,
+                "message": umsg,
+                "ip": userip,
+                "uid" : uid,
+            }      
+            firebase.database().ref('/ContactFormResponses').push(formData);
+            $("#contact-form").trigger("reset");
+            $("#contact-form-submission-feedback").css("opacity","1");
+            $("#contact-form-submission-feedback").html("Your response has been recorded successfully!");
         }
         else{
             $("#contact-form-submission-feedback").css("opacity","1");
-            $("#contact-form-submission-feedback").html("There are errors in your form:<br>");
+            $("#contact-form-submission-feedback").html("Some errors exist in your form submission:<br>");
             if(!rname.test(uname))
                 $("#contact-form-submission-feedback").html($("#contact-form-submission-feedback").html() + "Invalid Name <br>");
             if(!remail.test(uemail))
