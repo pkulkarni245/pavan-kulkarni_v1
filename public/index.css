@@ -1204,6 +1204,6 @@ li.ms-md-auto:hover {
         z-index: 10000;
       }
 
-      .noscript-link:hover {
+      .hover-color-effect:hover {
         color: var(--quaternary-color);
       }
