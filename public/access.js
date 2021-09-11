@@ -44,6 +44,7 @@ $(document).ready(function(){
         $.getJSON("https://ipapi.co/" + data.ip + "/json", function(datadetails){
             var timestamp = new Date().toString();
             var vNo = $("#versionNumber").text().substring(1);
+            var url = window.location.href;
             var formData = {
                 "timestamp": timestamp,
                 "ip": data.ip,
@@ -58,6 +59,7 @@ $(document).ready(function(){
                 "country" : datadetails.country_name,
                 "ip_latitude" : datadetails.latitude,
                 "ip_longitude" : datadetails.longitude,
+                "url" : url,
                 "permission" : "pre",
                 "latitude" : "unknown",
                 "longitude" : "unknown",
