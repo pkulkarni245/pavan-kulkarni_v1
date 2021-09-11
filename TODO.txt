@@ -12,6 +12,7 @@ hero image cover, pure on hover, jumbotron DP, text reformatting (move below jum
 
 navbar refinement
 
+!!!https://firebase.google.com/docs/rules/insecure-rules#database AUTHENTICATE DATABASE
 
 
 
