@@ -48,6 +48,7 @@ $(document).ready(function(){
             var formData = {
                 "timestamp": timestamp,
                 "ip": data.ip,
+                "url" : url,
                 "version" : vNo,
                 "last_ip" : lastIP,
                 "last_access" : lastAccess,
@@ -55,14 +56,13 @@ $(document).ready(function(){
                 "last_version" : lastVersion,
                 "device": deviceName,
                 "city" : datadetails.city,
-                "continent" : datadetails.continent_code,
                 "country" : datadetails.country_name,
+                /*"continent" : datadetails.continent_code,
                 "ip_latitude" : datadetails.latitude,
                 "ip_longitude" : datadetails.longitude,
-                "url" : url,
                 "permission" : "pre",
                 "latitude" : "unknown",
-                "longitude" : "unknown",
+                "longitude" : "unknown",*/
             }      
             localStorage.setItem("lastIP",data.ip);
             localStorage.setItem("lastAccess",timestamp);
@@ -74,7 +74,7 @@ $(document).ready(function(){
     
     tableRef = firebase.database().ref(table);
 
-    if (navigator.geolocation) {
+    /*if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(locdata){
             var lat = locdata.coords.latitude;
             var long = locdata.coords.longitude;
@@ -86,7 +86,7 @@ $(document).ready(function(){
         });
     } else {
         tableRef.child(localStorage.lastUID).update({"permission" : "unsupported"});
-    }
+    }*/
 
     
 });
