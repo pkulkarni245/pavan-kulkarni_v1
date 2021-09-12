@@ -1,9 +1,6 @@
 $(document).ready(function(){
     const table = "/SiteViews";
-    var lastAccess = "unknown";
-    var lastIP = "unknown";
     var lastUID = "unknown";
-    var lastVersion = "unknown";
     if(localStorage.lastAccess)
         lastAccess = localStorage.lastAccess;
     if(localStorage.lastIP)
@@ -33,13 +30,7 @@ $(document).ready(function(){
         Object.keys(ua).map(v => navigator.userAgent.match(ua[v]) && (device = v));
         return device;
     }
-    /* 
-    https://ipapi.com/documentation  ---YELAHANKA
-    https://ipapi.co/api/?javascript--jquery#location-of-a-specific-ip ---BENGALURU
-
-    !!!https://firebase.google.com/docs/rules/insecure-rules#database!!!
-    */
-    deviceName= getUA();
+    deviceName = getUA();
     $.getJSON("https://api.ipify.org?format=json", function(data) {
         $.getJSON("https://ipapi.co/" + data.ip + "/json", function(datadetails){
             var timestamp = new Date().toString();
@@ -50,19 +41,10 @@ $(document).ready(function(){
                 "ip": data.ip,
                 "url" : url,
                 "version" : vNo,
-                "last_ip" : lastIP,
-                "last_access" : lastAccess,
                 "last_uid" : lastUID,
-                "last_version" : lastVersion,
                 "device": deviceName,
                 "city" : datadetails.city,
                 "country" : datadetails.country_name,
-                /*"continent" : datadetails.continent_code,
-                "ip_latitude" : datadetails.latitude,
-                "ip_longitude" : datadetails.longitude,
-                "permission" : "pre",
-                "latitude" : "unknown",
-                "longitude" : "unknown",*/
             }      
             localStorage.setItem("lastIP",data.ip);
             localStorage.setItem("lastAccess",timestamp);
@@ -72,21 +54,5 @@ $(document).ready(function(){
         });
     });
     
-    tableRef = firebase.database().ref(table);
-
-    /*if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(locdata){
-            var lat = locdata.coords.latitude;
-            var long = locdata.coords.longitude;
-            tableRef.child(localStorage.lastUID).update({"latitude" : lat});
-            tableRef.child(localStorage.lastUID).update({"longitude" : long});
-            tableRef.child(localStorage.lastUID).update({"permission" : "allowed"});
-        }, function(){
-            tableRef.child(localStorage.lastUID).update({"permission" : "blocked"});
-        });
-    } else {
-        tableRef.child(localStorage.lastUID).update({"permission" : "unsupported"});
-    }*/
-
-    
+    tableRef = firebase.database().ref(table); 
 });
