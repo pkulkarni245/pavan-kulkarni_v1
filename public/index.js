@@ -2,7 +2,7 @@ $.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main
     $.getJSON(data.object.url, function(commitData) {
         var vData = commitData.message;
         var id = vData.indexOf("\n");
-        $("#versionNumber").text($("#versionNumber").text + ": " + commitData.message.substring(0, id));
+        $("#versionNumber").text(commitData.message.substring(0, id));
     });
 });
 $(document).ready(function(){ 
