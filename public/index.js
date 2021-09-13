@@ -3,6 +3,8 @@ $.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main
         var vData = commitData.message;
         var idx = vData.indexOf("\n");
         $("#versionNumber").text(commitData.message.substring(0, idx));
+        if(idx == -1)
+            $("#versionNumber").text(commitData.message);
     });
 });
 $(document).ready(function(){ 

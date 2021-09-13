@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const table = "/SiteViews_Testing";
+    const table = "/SiteViews";
     var lastUID = "unknown";
     if(localStorage.lastAccess)
         lastAccess = localStorage.lastAccess;
