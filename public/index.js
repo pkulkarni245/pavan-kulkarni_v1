@@ -2,7 +2,7 @@ $.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main
     $.getJSON(data.object.url, function(commitData) {
         var vData = commitData.message;
         var idx = vData.indexOf("\n");
-        $("#versionNumber").text(commitData.message.substring(7, idx));
+        $("#versionNumber").text(commitData.message.substring(0, idx));
         if(idx == -1)
             $("#versionNumber").text(commitData.message);
     });
