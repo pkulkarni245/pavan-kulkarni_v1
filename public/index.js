@@ -1,8 +1,8 @@
 $.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main", function(data) {
     $.getJSON(data.object.url, function(commitData) {
         var vData = commitData.message;
-        var id = vData.indexOf("\n");
-        $("#versionNumber").text(commitData.message.substring(0, id));
+        var idx = vData.indexOf("\n");
+        $("#versionNumber").text(commitData.message.substring(0, idx));
     });
 });
 $(document).ready(function(){ 
@@ -19,6 +19,10 @@ $(document).ready(function(){
             bttButton.style.visibility = 'hidden';
         } 
     }); 
+    $(".btn-modal-close").click(function(){
+        var modalID = "#" + $(this).attr("data-close-id");
+        $(modalID).css("display","none");
+    });
 
     //Tooltip Function
     $(".tt").mouseover(function(){
@@ -38,6 +42,7 @@ $(document).ready(function(){
     $("#btn-404").click(function(){
       window.location = "index.html";
     });
+    
 
     
 });

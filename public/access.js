@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const table = "/SiteViews";
+    const table = "/SiteViews_Testing";
     var lastUID = "unknown";
     if(localStorage.lastAccess)
         lastAccess = localStorage.lastAccess;
@@ -31,27 +31,25 @@ $(document).ready(function(){
         return device;
     }
     deviceName = getUA();
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("https://ipapi.co/" + data.ip + "/json", function(datadetails){
-            var timestamp = new Date().toString();
-            var vNo = $("#versionNumber").text().substring(1);
-            var url = window.location.href;
-            var formData = {
-                "timestamp": timestamp,
-                "ip": data.ip,
-                "url" : url,
-                "version" : vNo,
-                "last_uid" : lastUID,
-                "device": deviceName,
-                "city" : datadetails.city,
-                "country" : datadetails.country_name,
-            }      
-            localStorage.setItem("lastIP",data.ip);
-            localStorage.setItem("lastAccess",timestamp);
-            localStorage.setItem("lastVersion",vNo);
-            const firebaseuid = firebase.database().ref(tableRef).push(formData).key;
-            localStorage.setItem("lastUID", firebaseuid);
-        });
+    $.getJSON("https://ipapi.co/json", function(data){
+        var timestamp = new Date().toString();
+        var vNo = $("#versionNumber").text().substring(1);
+        var url = window.location.href;
+        var formData = {
+            "timestamp": timestamp,
+            "ip": data.ip,
+            "url" : url,
+            "version" : vNo,
+            "last_uid" : lastUID,
+            "device": deviceName,
+            "city" : data.city,
+            "country" : data.country_name,
+        }      
+        localStorage.setItem("lastIP",data.ip);
+        localStorage.setItem("lastAccess",timestamp);
+        localStorage.setItem("lastVersion",vNo);
+        const firebaseuid = firebase.database().ref(tableRef).push(formData).key;
+        localStorage.setItem("lastUID", firebaseuid);
     });
     
     tableRef = firebase.database().ref(table); 

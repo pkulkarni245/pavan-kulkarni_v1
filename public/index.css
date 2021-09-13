@@ -1204,6 +1204,47 @@ li.ms-md-auto:hover {
         z-index: 10000;
       }
 
+      @media only screen and (max-width: 600px) {
+        #scroll-progress {
+          display: none;
+        }
+      }
+
       .hover-color-effect:hover {
         color: var(--quaternary-color);
+      }
+
+      .modal {
+        top: calc( 30%);
+      }
+
+      .modal-content {
+        background-color: var(--primary-color-translucent);
+        border-color: var(--tertiary-color);
+        border-radius: 0%;
+      }
+
+      .modal-header {
+        border-bottom-color: var(--tertiary-color);
+      }
+
+      .modal-title, .modal-body, .modal-footer > button {
+        color: var(--quaternary-color);
+      }
+
+      .modal-footer {
+        border: none;
+      }
+
+      .modal-footer > .btn-outline-primary {
+        border-color: var(--quaternary-color);
+      }
+
+      .modal-footer > .btn-outline-primary:hover {
+        background-color: var(--quaternary-color);
+        color: var(--primary-color);
+      }
+
+      .btn-outline-primary:hover .modal-body {
+        opacity: 50%;
       }
