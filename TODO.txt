@@ -10,3 +10,7 @@ CAPTURE CURRENT AND LAST VERSION NUMBERS TO ADD What's New page from json file, 
 hero image cover, pure on hover, jumbotron DP, text reformatting (move below jumbotron)
 
 navbar refinement
+
+RESUME FROM CLOUD STORAGE INSTEAD OF HOSTED FILE
+
+SELECTED TEXT COLOR AS CSS * (apply to all elements through * selector in CSS)

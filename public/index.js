@@ -1,4 +1,4 @@
-$.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main", function(data) {
+/*$.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main", function(data) {
     $.getJSON(data.object.url, function(commitData) {
         var vData = commitData.message;
         var idx = vData.indexOf("\n");
@@ -6,7 +6,7 @@ $.getJSON("https://api.github.com/repos/pkulkarni245/profile/git/refs/heads/main
         if(idx == -1)
             $("#versionNumber").text(commitData.message);
     });
-});
+});*/
 $(document).ready(function(){ 
     $(this).scrollTop(0);
     setTimeout(function(){
