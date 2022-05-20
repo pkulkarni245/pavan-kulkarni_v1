@@ -678,15 +678,32 @@ li.ms-md-auto:hover {
       max-width: 210px;
       padding-top: 5px;
       padding-bottom: 5px;
-      border-radius: 10%;
+      border-radius: 0%;
       position: relative;
       left: calc( 50% - 105px);
     }
+    .dp-holder-under {
+      background-color: var(--tertiary-color);
+      max-width: 210px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 10%;
+      position: relative;
+      left: calc( 50% - 105px);
+      border-radius: 100%;
+      margin-top: 1%;
+      margin-bottom: 1%;
+    }
 
-    .display-picture, .jumbotron-display-picture {
+    .display-picture-under, .jumbotron-display-picture {
       max-width: 200px;
       height: auto;
-      border-radius: 10%;
+      border-radius: 0%;
+    }
+    .display-picture, .jumbotron-display-picture-under {
+      max-width: 200px;
+      height: auto;
+      border-radius: 100%;
     }
     
     .jumbotron-display-picture-caption {
@@ -707,6 +724,7 @@ li.ms-md-auto:hover {
       left: 0%;
       font-size: 16px;
       background-color: var(--shade-primary);
+      /* margin-top: 15%; */
     }
 
     @media only screen and (max-width: 600px) {
@@ -1086,6 +1104,9 @@ li.ms-md-auto:hover {
 
       .muted-subheading {
         margin-bottom: 10%;
+      }
+      .muted-subheading-under {
+        margin-bottom: 0%;
       }
 
       a .nav-link .active {
